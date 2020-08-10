@@ -21,4 +21,4 @@ const changeFilter = filter => ({
   filter,
 });
 
-export { actions, addCategories, changeFilter, addRecipes}
+export { actions, addCategories, changeFilter, addRecipes }
