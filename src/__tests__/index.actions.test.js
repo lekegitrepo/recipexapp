@@ -9,6 +9,10 @@ const recipes = [
     name: 'Pounded Yam',
     id: 5,
   },
+  {
+    name: 'Fruit salad',
+    id: 10,
+  },
 ];
 
 const categories = ['Beef', 'Fruit', 'Grains'];

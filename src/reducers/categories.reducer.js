@@ -5,7 +5,7 @@ const { ADD_CATEGORIES } = actions;
 const categories = (state = [], actions) => {
   switch (actions.type) {
     case ADD_CATEGORIES:
-      return actions.categories;
+      return [...state, actions.categories];
     default:
       return state;
   }
