@@ -4,10 +4,10 @@ const actions = {
   CHANGE_FILTER: 'CHANGE_FILTER',
 };
 
-const addRecipes = recipes => (
+const addRecipes = recipe => (
   {
     type: actions.ADD_RECIPES,
-    recipes,
+    recipe,
   }
 );
 

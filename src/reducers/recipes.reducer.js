@@ -5,7 +5,7 @@ const { ADD_RECIPES } = actions;
 const recipe = (state = [], actions) => {
   switch (actions.type) {
     case ADD_RECIPES:
-      return actions.recipe;
+      return [...state, actions.recipe];
     default:
       return state;
   }
