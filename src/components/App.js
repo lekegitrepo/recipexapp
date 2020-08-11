@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../style/App.css';
 
 function App() {
   fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
