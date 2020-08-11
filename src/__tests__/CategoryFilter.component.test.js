@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import CategoryFilter from '../components/CategoryFilter.component';
 
-const testAttribute = (component, attribute) => {
+const componentTest = (component, attribute) => {
   const wrapper = component.find(attribute);
   return wrapper;
 };
@@ -34,9 +34,9 @@ describe('CategoryFilter Component', () => {
   });
 
   it('should render CategoryFilter component', () => {
-    const wrapper = testAttribute(component, '.filter');
-    const options = testAttribute(component, 'option');
+    const wrapper = componentTest(component, '.filter');
+    const options = componentTest(component, 'option');
     expect(wrapper.length).toEqual(1);
-    expect(options.length).toEqual(4);
+    expect(options.length).toEqual(5);
   });
 });

@@ -2,13 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Recipe from '../components/Recipe.component';
 
-const attributeTest = (component, attribute) => {
+const componentTest = (component, attribute) => {
   const wrapper = component.find(attribute);
   return wrapper;
 };
 
 const recipes = [{
-  strMeal: 'Large Pizzas',
+  strMeal: 'Pizza',
   strMealThumb: 'https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg',
 }];
 
@@ -36,7 +36,7 @@ describe('Recipe Component', () => {
   });
 
   it('should render recipe component', () => {
-    const element = attributeTest(component, '.container');
+    const element = componentTest(component, '.container');
     expect(element.length).toEqual(1);
   });
 });
