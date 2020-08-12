@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import PageRoute from './containers/Route.container'
 import './style/index.css';
-import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PageRoute />
   </React.StrictMode>,
   document.getElementById('root')
 );
