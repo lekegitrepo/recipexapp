@@ -1,7 +1,8 @@
 const actions = {
   ADD_RECIPES: 'ADD_RECIPES',
-  ADD_CATEGORIES: 'ADD_CATEGORIES',
+  ADD_CATEGORY: 'ADD_CATEGORY',
   CHANGE_FILTER: 'CHANGE_FILTER',
+  ADD_CATEGORIES: 'ADD_CATEGORIES',
 };
 
 const addRecipes = recipe => (
@@ -11,9 +12,9 @@ const addRecipes = recipe => (
   }
 );
 
-const addCategories = categories => ({
-  type: actions.ADD_CATEGORIES,
-  categories,
+const addCategory = category => ({
+  type: actions.ADD_CATEGORY,
+  category,
 });
 
 const changeFilter = filter => ({
@@ -21,4 +22,9 @@ const changeFilter = filter => ({
   filter,
 });
 
-export { actions, addCategories, changeFilter, addRecipes }
+const addCategories = categories => ({
+  type: actions.ADD_CATEGORIES,
+  categories,
+});
+
+export { actions, addCategory, changeFilter, addRecipes, addCategories }
