@@ -6,10 +6,11 @@ import PropTypes from 'prop-types';
 
 class Recipe extends Component {
   render() {
-    const { recipes, location } = this.props;
-    const recipe = recipes.find(item => item.strMeal === location.state.recipe);
+    const { location } = this.props;
+    const recipe = location.state.recipes.find(item => item.strMeal === location.state.recipe);
     const displayRecipe = recipe ? (
       <div className="container">
+      <h5>Recipes Categories</h5>
         <div className="recipe" style={{ marginTop: '40px' }}>
           <img className="recipe-image" src={recipe.strMealThumb} alt={recipe.strMeal} style={{ width: '350px' }} />
           <h3 className="recipe-title">{recipe.strMeal}</h3>

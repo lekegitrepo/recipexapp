@@ -1,18 +1,18 @@
-import React from 'react';
-import '../style/App.css';
+import React, { Component } from 'react';
+import Categories from './Categories.component';
 
-function App() {
-  fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
-  .then(response => response.json())
-  .then(data => console.log(data));
-  return (
-    <div className="App">
-      <h1>Recipes App</h1>
-      <ul>
-        {}
-      </ul>
-    </div>
-  );
+class App extends Component {
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Recipes App</h1>
+        <div>
+          <Categories />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
