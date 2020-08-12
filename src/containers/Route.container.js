@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../store/index.store';
 import App from '../components/App';
@@ -10,9 +10,9 @@ const PageRoute = () => (
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route exact path="/" component={App} />  
+        <Route exact path="/" component={App} />
         <Route path="/category/:id" component={Recipes} />
-        <Route path="/recipe/:id" component={Recipe} />  
+        <Route path="/recipe/:id" component={Recipe} />
       </Switch>
     </Router>
   </Provider>
