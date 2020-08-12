@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { v4 } from 'uuid';
 import Recipes from './Recipes.component';
 import { addRecipes, addCategory, changeFilter, addCategories } from '../actions/index.actions';
 
@@ -14,7 +15,6 @@ class Categories extends Component {
        const { ...items } = await res.json();
        const { categories } = items // categories from json object
        addCategories(categories)
-       addRecipes('Beef Meat')
        return items;
      } catch (error) {
        throw new Error(error.message);
@@ -31,9 +31,9 @@ class Categories extends Component {
       <div className="Categories">
         <div>
           {categories.map(item =>
-            <div key={item.idCategory} className="col-md-4 recipe" style={{ marginBottom: '2rem' }}>
+            <div key={v4()} className="col-md-4 recipe" style={{ marginBottom: '2rem' }}>
               <div className="recipes__box">
-                <img className="recipe__box-img" src={item.strCategoryThumb} alt={item.strCategory} />
+                <img className="recipe__box-image" src={item.strCategoryThumb} alt={item.strCategory} />
                 <div className="recipe__text">
                   <h5 className="recipes__title">
                     {item.strCategory}

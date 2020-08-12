@@ -25,7 +25,11 @@ describe('Recipe Component', () => {
 
   beforeEach(() => {
     const props = {
-      recipes,
+      location: {
+        state: {
+          recipes
+        }
+      },
       location: {
         state: {
           recipe: 'Pizza',

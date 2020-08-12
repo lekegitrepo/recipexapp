@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { v4 } from 'uuid';
 import { addCategories } from '../actions/index.actions';
 
 class Recipes extends Component {
@@ -34,7 +35,7 @@ class Recipes extends Component {
           {categories.map(res => 
           { 
             return (
-              <div key={res.idMeal} className="col-md-4 recipe" style={{ marginBottom: '2rem' }}>
+              <div key={v4()} className="col-md-4 recipe" style={{ marginBottom: '2rem' }}>
                 <div className="recipe__card">
                   <img className="recipe__card-image" src={res.strMealThumb} alt={res.strMeal} />
                   <div className="recipe__text">

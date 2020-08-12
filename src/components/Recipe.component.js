@@ -33,7 +33,6 @@ class Recipe extends Component {
 }
 
 Recipe.propTypes = {
-  recipes: PropTypes.instanceOf(Array).isRequired,
   location: PropTypes.instanceOf(Object).isRequired,
 };
 
