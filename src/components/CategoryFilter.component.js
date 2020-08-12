@@ -1,7 +1,6 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 
-
 const CategoryFilter = ({ categories, changeFilter, filter }) => {
   const handleChange = e => {
     changeFilter(e.target.value);

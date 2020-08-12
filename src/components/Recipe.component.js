@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-
 class Recipe extends Component {
   render() {
     const { location } = this.props;
@@ -11,14 +10,18 @@ class Recipe extends Component {
     const displayRecipe = recipe ? (
       <section className="single-recipe">
         <header>
-          <h3>{recipe.strMeal} Recipe</h3>
+          <h3>
+            {recipe.strMeal}
+            {' '}
+            Recipe
+          </h3>
         </header>
         <div className="container">
           <div className="recipe">
-            <img className="recipe__image" src={recipe.strMealThumb} alt={recipe.strMeal}/>
+            <img className="recipe__image" src={recipe.strMealThumb} alt={recipe.strMeal} />
             <h3 className="recipe__title">{recipe.strMeal}</h3>
             <h4 className="recipe__details">
-            Category:
+              Category:
               <span>{location.state.category}</span>
             </h4>
             <button className="btn btn-back" type="button">
