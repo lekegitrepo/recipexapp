@@ -1,8 +1,9 @@
 # RecipexApp
 
-[Project link here]()
+### Description
+This is a capstone project built with React & Redux to retrieve and display recipe data from [TheMealDB.com](https://www.themealdb.com/api.php)
 
-![library](image link for front page)
+![Screenshot](./public/Screenshot.png)
 
 ## Built With
 
@@ -18,7 +19,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://)
+[Live Demo Link]( https://recipes-catelogue.netlify.app)
 
 ## Installation
 
