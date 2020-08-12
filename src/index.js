@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PageRoute from './containers/Route.container'
+import PageRoute from './containers/Route.container';
 import './style/index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -8,7 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     <PageRoute />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
