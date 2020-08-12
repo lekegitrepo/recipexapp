@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import PageRoute from './containers/Route.container'
 import './style/index.css';
 import * as serviceWorker from './serviceWorker';

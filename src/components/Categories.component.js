@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { v4 } from 'uuid';
-import Recipes from './Recipes.component';
-import { addRecipes, addCategory, changeFilter, addCategories } from '../actions/index.actions';
+import { addRecipes, addCategories } from '../actions/index.actions';
 
 class Categories extends Component {
   
    getCategoriesRecipes = async () => {
-    const { addCategory, addRecipes, addCategories } = this.props
+    const { addCategories } = this.props
      try {
        const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
        const { ...items } = await res.json();
@@ -26,7 +25,7 @@ class Categories extends Component {
   };
  
   render() {
-    const { categories, recipes } = this.props
+    const { categories } = this.props
     return (
       <div className="Categories">
         <div>
