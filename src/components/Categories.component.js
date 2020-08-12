@@ -31,7 +31,7 @@ class Categories extends Component {
       <div className="Categories">
         <div>
           {categories.map(item =>
-            <div key={v4()} className="col-md-4 recipe">
+            <div key={v4()} className="recipe">
               <div className="recipes__card">
                 <img className="recipe__card-image" src={item.strCategoryThumb} alt={item.strCategory} />
                 <div className="recipe__text">

@@ -29,7 +29,9 @@ class Recipes extends Component {
     const { categories, location } = this.props
     return (
       <div className="container">
-        <h5>{location.state.name} Category</h5>
+        <header>
+          <h3>{location.state.name} Category</h3>
+        </header>
         <div className="row">
           {categories.map(res => 
           { 
@@ -42,7 +44,7 @@ class Recipes extends Component {
                       {res.strMeal}
                     </h5>
                     <p className="recipes__subtitle">
-                    Publisher: 
+                    Content: 
                       <span>{res.strMeal }</span>
                     </p>
                   </div>

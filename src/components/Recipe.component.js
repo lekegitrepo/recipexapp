@@ -11,17 +11,17 @@ class Recipe extends Component {
     const displayRecipe = recipe ? (
       <div className="container">
       <h5>Recipes Categories</h5>
-        <div className="recipe" style={{ marginTop: '40px' }}>
-          <img className="recipe-image" src={recipe.strMealThumb} alt={recipe.strMeal} style={{ width: '350px' }} />
-          <h3 className="recipe-title">{recipe.strMeal}</h3>
-          <h4 className="recipe-details">
+        <div className="recipe single-recipe">
+          <img className="recipe__image" src={recipe.strMealThumb} alt={recipe.strMeal}/>
+          <h3 className="recipe__title">{recipe.strMeal}</h3>
+          <h4 className="recipe__details">
           Category:
             <span>{recipe.strCategory}</span>
           </h4>
-          <p className="recipe-website">
+          {/*<p className="recipe-website">
           YouTube:
             <span><a href={recipe.strYoutube}>{recipe.strMeal}</a></span>
-          </p>
+          </p>*/}
           <button className="btn btn-back" type="button">
             <Link to="/">Back</Link>
           </button>
