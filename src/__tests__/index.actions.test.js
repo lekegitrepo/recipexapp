@@ -40,4 +40,3 @@ describe('addRecipes', () => {
     expect(values).toEqual(['ADD_RECIPES', recipes]);
   });
 });
-

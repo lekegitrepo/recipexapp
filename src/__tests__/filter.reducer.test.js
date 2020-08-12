@@ -13,9 +13,9 @@ describe('Reducer Category', () => {
   });
 
   it('should return a filter state', () => {
-    const categories = ['Vegetable', 'Fruit', 'Grain', 'Meat']
-    categories['Fruit'] = ['Apple', 'Orange', 'Pineapple']
-    const action = changeFilter(categories['Fruit']);
+    const categories = ['Vegetable', 'Fruit', 'Grain', 'Meat'];
+    categories.Fruit = ['Apple', 'Orange', 'Pineapple'];
+    const action = changeFilter(categories.Fruit);
     const filterCategory = filterReducer([], action);
     expect(filterCategory).toEqual(['Apple', 'Orange', 'Pineapple']);
   });

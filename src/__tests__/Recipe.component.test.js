@@ -13,8 +13,8 @@ const recipes = [{
 }];
 
 const setup = (props = {}) => {
-  const component = shallow(<Recipe.WrappedComponent 
-    location={props.location} 
+  const component = shallow(<Recipe.WrappedComponent
+    location={props.location}
   />);
   return component;
 };

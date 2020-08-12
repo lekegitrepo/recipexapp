@@ -47,7 +47,7 @@ describe('Category Reducer', () => {
   });
 
   it('should return an updated state if it receives a valid type', () => {
-    const action = addRecipes({name: 'Juices', id: 7});
+    const action = addRecipes({ name: 'Juices', id: 7 });
     const newState = recipeReducer(recipes, action);
     expect(newState).toEqual(updatedRecipes);
   });

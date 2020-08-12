@@ -1,37 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import App from '../components/App';
-
-/*test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/Recipes App/i);
-  expect(linkElement).toBeInTheDocument();
-});*/
 
 const testAttribute = (component, attribute) => {
   const wrapper = component.find(attribute);
   return wrapper;
 };
 
-const recipes = [
-  {
-    name: 'Pizza',
-    id: 3,
-  },
-  {
-    name: 'Pounded Yam',
-    id: 5,
-  },
-  {
-    name: 'Fruit salad',
-    id: 10,
-  },
-];
-
-const categories = ['Vegetable', 'Fruit', 'Grain', 'Meat'];
-
-const setup = (props = {}) => {
+const setup = () => {
   const component = shallow(
     <App />,
   );
@@ -41,15 +17,8 @@ const setup = (props = {}) => {
 describe('CategoryFilter Component', () => {
   let component;
 
-  const props = {
-    filter: '',
-    categories,
-    recipes,
-    changeFilter: () => null,
-  };
-
   beforeEach(() => {
-    component = setup(props);
+    component = setup();
   });
 
   it('should render without errors', () => {

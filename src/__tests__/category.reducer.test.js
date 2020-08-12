@@ -28,4 +28,3 @@ describe('Reducer Category', () => {
     expect(newState).toEqual(['Beef', 'Fruit', 'Grains', 'Meat', 'Beverages']);
   });
 });
-
