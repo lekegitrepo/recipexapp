@@ -14,7 +14,6 @@ const recipes = [{
 
 const setup = (props = {}) => {
   const component = shallow(<Recipe.WrappedComponent 
-    recipes={props.recipes} 
     location={props.location} 
   />);
   return component;
@@ -27,12 +26,8 @@ describe('Recipe Component', () => {
     const props = {
       location: {
         state: {
-          recipes
-        }
-      },
-      location: {
-        state: {
           recipe: 'Pizza',
+          recipes,
         },
       },
     };
