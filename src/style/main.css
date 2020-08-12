@@ -39,13 +39,13 @@ header {
   text-align: center;
 }
 
+.recipe {
+  margin-bottom: 2rem;
+}
+
 .single-recipe .recipe {
   margin: 1rem auto;
   width: 55%;
-}
-
-.recipe {
-  margin-bottom: 2rem;
 }
 
 .recipes__card {
