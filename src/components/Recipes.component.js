@@ -28,35 +28,37 @@ class Recipes extends Component {
   render() {
     const { categories, location } = this.props
     return (
-      <div className="container">
+      <section className="recipes">
         <header>
           <h3>{location.state.name} Category</h3>
         </header>
-        <div className="row">
-          {categories.map(res => 
-          { 
-            return (
-              <div key={v4()} className="col-md-4 recipe">
-                <div className="recipe__card">
-                  <img className="recipe__card-image" src={res.strMealThumb} alt={res.strMeal} />
-                  <div className="recipe__text">
-                    <h5 className="recipes__title">
-                      {res.strMeal}
-                    </h5>
-                    <p className="recipes__subtitle">
-                    Content: 
-                      <span>{res.strMeal }</span>
-                    </p>
+        <div className="container">
+          <div className="row">
+            {categories.map(res => 
+            { 
+              return (
+                <div key={v4()} className="col-md-4 recipe">
+                  <div className="recipe__card">
+                    <img className="recipe__card-image" src={res.strMealThumb} alt={res.strMeal} />
+                    <div className="recipe__text">
+                      <h5 className="recipes__title">
+                        {res.strMeal}
+                      </h5>
+                      <p className="recipes__subtitle">
+                      Content: 
+                        <span>{res.strMeal }</span>
+                      </p>
+                    </div>
+                    <button className="btn btn-view" type="button">
+                      <Link to={{ pathname: `/recipe/${res.idMeal}`, state: { recipe: res.strMeal, recipes: categories } }}>View Recipe</Link>
+                    </button>
                   </div>
-                  <button className="btn btn-view" type="button">
-                    <Link to={{ pathname: `/recipe/${res.idMeal}`, state: { recipe: res.strMeal, recipes: categories } }}>View Recipe</Link>
-                  </button>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
+      </section>
     );
   }
 }
