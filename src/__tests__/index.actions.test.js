@@ -1,4 +1,4 @@
-import { addCategories, addRecipes, changeFilter } from '../actions/index.actions';
+import { addCategory, addRecipes, changeFilter } from '../actions/index.actions';
 
 const recipes = [
   {
@@ -25,11 +25,11 @@ describe('changeFilter', () => {
   });
 });
 
-describe('addCategories', () => {
+describe('addCategory', () => {
   it('should return type and a value containing the array of new categories', () => {
-    const values = Object.values(addCategories(categories));
+    const values = Object.values(addCategory(categories));
 
-    expect(values).toEqual(['ADD_CATEGORIES', categories]);
+    expect(values).toEqual(['ADD_CATEGORY', categories]);
   });
 });
 

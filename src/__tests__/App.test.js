@@ -33,12 +33,6 @@ const categories = ['Vegetable', 'Fruit', 'Grain', 'Meat'];
 
 const setup = (props = {}) => {
   const component = shallow(
-    /*<App.WrappedComponent 
-      filter={props.filter} 
-      categories={props.categories} 
-      changeFilter={props.changeFilter} 
-      recipes={props.recipes} 
-    />,*/
     <App />,
   );
   return component;
