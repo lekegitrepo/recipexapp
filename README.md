@@ -69,3 +69,7 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MiT](https://opensource.org/licenses/MIT) licensed.
+
+## Acknowledgment
+
+Design idea by [Marc-Antoine Roy on Behance](https://www.behance.net/gallery/11351281/NomNom)
