@@ -39,6 +39,11 @@ header {
   text-align: center;
 }
 
+.single-recipe .recipe {
+  margin: 1rem auto;
+  width: 55%;
+}
+
 .recipe {
   margin-bottom: 2rem;
 }
