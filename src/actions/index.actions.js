@@ -27,4 +27,6 @@ const addCategories = categories => ({
   categories,
 });
 
-export { actions, addCategory, changeFilter, addRecipes, addCategories }
+export {
+  actions, addCategory, changeFilter, addRecipes, addCategories,
+};
