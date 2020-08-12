@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Categories from './Categories.component';
+import '../style/main.css';
 
 class App extends Component {
 

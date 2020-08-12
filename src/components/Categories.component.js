@@ -31,9 +31,9 @@ class Categories extends Component {
       <div className="Categories">
         <div>
           {categories.map(item =>
-            <div key={v4()} className="col-md-4 recipe" style={{ marginBottom: '2rem' }}>
-              <div className="recipes__box">
-                <img className="recipe__box-image" src={item.strCategoryThumb} alt={item.strCategory} />
+            <div key={v4()} className="col-md-4 recipe">
+              <div className="recipes__card">
+                <img className="recipe__card-image" src={item.strCategoryThumb} alt={item.strCategory} />
                 <div className="recipe__text">
                   <h5 className="recipes__title">
                     {item.strCategory}

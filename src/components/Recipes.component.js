@@ -27,7 +27,6 @@ class Recipes extends Component {
   
   render() {
     const { categories, location } = this.props
-    console.log('console render ', categories)
     return (
       <div className="container">
         <h5>{location.state.name} Category</h5>
@@ -35,7 +34,7 @@ class Recipes extends Component {
           {categories.map(res => 
           { 
             return (
-              <div key={v4()} className="col-md-4 recipe" style={{ marginBottom: '2rem' }}>
+              <div key={v4()} className="col-md-4 recipe">
                 <div className="recipe__card">
                   <img className="recipe__card-image" src={res.strMealThumb} alt={res.strMeal} />
                   <div className="recipe__text">
