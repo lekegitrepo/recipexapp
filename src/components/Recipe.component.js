@@ -19,14 +19,10 @@ class Recipe extends Component {
             <h3 className="recipe__title">{recipe.strMeal}</h3>
             <h4 className="recipe__details">
             Category:
-              <span>{recipe.strCategory}</span>
+              <span>{location.state.category}</span>
             </h4>
-            {/*<p className="recipe-website">
-            YouTube:
-              <span><a href={recipe.strYoutube}>{recipe.strMeal}</a></span>
-            </p>*/}
             <button className="btn btn-back" type="button">
-              <Link to="/">Back</Link>
+              <Link to="/">Back to Home</Link>
             </button>
           </div>
         </div>

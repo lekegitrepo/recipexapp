@@ -10,7 +10,6 @@ class Recipes extends Component {
   getRecipes = async () => {
     const { addCategories, location } = this.props
      try {
-       console.log('category name ', location.state.name)
        const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${location.state.name}`);
        const { meals } = await res.json();
        addCategories(meals)
@@ -27,6 +26,9 @@ class Recipes extends Component {
   
   render() {
     const { categories, location } = this.props
+    const category = location.state.name;
+    const path = location.state.linkPath;
+    console.log('Path Link ', path)
     return (
       <section className="recipes">
         <header>
@@ -46,11 +48,11 @@ class Recipes extends Component {
                       </h5>
                       <p className="recipes__subtitle">
                       Content: 
-                        <span>{res.strMeal }</span>
+                        <span>{res.strMeal}</span>
                       </p>
                     </div>
                     <button className="btn btn-view" type="button">
-                      <Link to={{ pathname: `/recipe/${res.idMeal}`, state: { recipe: res.strMeal, recipes: categories } }}>View Recipe</Link>
+                      <Link to={{ pathname: `/recipe/${res.idMeal}`, state: { recipe: res.strMeal, recipes: categories, category: category, path: path } }}>View Details</Link>
                     </button>
                   </div>
                 </div>
