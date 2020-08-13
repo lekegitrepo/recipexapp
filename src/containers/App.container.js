@@ -1,5 +1,5 @@
 import React from 'react';
-import Categories from './Categories.component';
+import Categories from '../components/Categories.component';
 import '../style/main.css';
 
 const App = () => (
