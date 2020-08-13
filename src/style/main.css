@@ -52,10 +52,8 @@ header {
   background: #fff;
   border-radius: 5px;
   box-shadow: -1px 2px 34px -13px rgba(0, 0, 0, 0.75);
-  margin: 2rem auto;
   padding-bottom: 2rem;
   text-align: left;
-  width: 65%;
 }
 
 .recipe__text {

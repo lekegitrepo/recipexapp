@@ -31,10 +31,10 @@ class Categories extends Component {
   render() {
     const { categories } = this.props;
     return (
-      <div className="Categories">
-        <div>
+      <div className="Categories container">
+        <div className="row">
           {categories.map(item => (
-            <div key={v4()} className="recipe">
+            <div key={v4()} className="col-md-4 recipe">
               <div className="recipes__card">
                 <img className="recipe__card-image" src={item.strCategoryThumb} alt={item.strCategory} />
                 <div className="recipe__text">
