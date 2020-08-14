@@ -27,9 +27,9 @@ describe('Recipe Component', () => {
       location: {
         state: {
           recipe: 'Pizza',
-          recipes,
         },
       },
+      recipes,
     };
     component = setup(props);
   });

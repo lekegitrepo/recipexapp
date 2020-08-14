@@ -2,45 +2,95 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { addRecipe } from '../actions/index.actions';
 
 class Recipe extends Component {
+  constructor(props) {
+    super(props);
+    this.getRecipe = this.getRecipe.bind(this);
+  }
+
+  componentDidMount() {
+    this.getRecipe();
+  }
+
+  async getRecipe() {
+    const { addRecipe, location } = this.props;
+    try {
+      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${location.state.id}`);
+      const { meals } = await res.json();
+      console.log(meals)
+      addRecipe(meals[0])
+      return meals;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
   render() {
-    const { location } = this.props;
-    const recipe = location.state.recipes.find(item => item.strMeal === location.state.recipe);
-    const displayRecipe = recipe ? (
+    const { recipe } = this.props;
+    let recipeDetail = recipe[recipe.length - 1]
+    console.log('render: ', recipe)
+    if (recipe.length) {
+      recipeDetail = recipe[recipe.length - 1]
+      if(recipe.length > 1) recipe.shift()
+    }
+    const displayRecipe = recipeDetail ? (
       <section className="single-recipe">
         <header>
           <h3>
-            {recipe.strMeal}
+            {recipeDetail.strMeal}
             {' '}
             Recipe
           </h3>
         </header>
         <div className="container">
           <div className="recipe">
-            <img className="recipe__image" src={recipe.strMealThumb} alt={recipe.strMeal} />
-            <h3 className="recipe__title">{recipe.strMeal}</h3>
-            <h4 className="recipe__details">
-              Category:
-              <span>{location.state.category}</span>
-            </h4>
+            <img className="recipe__image" src={recipeDetail.strMealThumb} alt={recipeDetail.strMeal} />
+            <h3 className="recipe__title">{recipe[0].strMeal}</h3>
+            <h5 className="recipe__details">
+              Category: <span> {recipeDetail.strCategory} </span>
+            </h5>
+            <h5>
+              Country: <span> {recipeDetail.strArea}</span>
+            </h5>
+            <div>
+              <h5>Instructions</h5>
+              <p>
+                {recipeDetail.strInstructions}
+              </p>
+              <h6>
+                Youtube link:
+                <a
+                  className="link"
+                  href={recipeDetail.strYoutube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View Instructions Video</a>
+              </h6>
+              <h6>Tags: <span>{recipeDetail.strTags}</span></h6>
+            </div>
             <button className="btn btn-back" type="button">
               <Link to="/">Back to Home</Link>
             </button>
           </div>
         </div>
       </section>
-    ) : <h4>Recipe Not Found</h4>;
+    ) : <h4>Loading...</h4>;
     return displayRecipe;
   }
 }
+
+const mapStateToProps = ({ recipe }) => ({
+  recipe,
+});
+
+const mapDispatchToProps = dispatch => ({
+  addRecipe: recipe => dispatch(addRecipe(recipe)),
+});
 
 Recipe.propTypes = {
   location: PropTypes.instanceOf(Object).isRequired,
 };
 
-const mapStateToProps = ({ recipes }) => ({
-  recipes,
-});
-
-export default connect(mapStateToProps)(Recipe);
+export default connect(mapStateToProps, mapDispatchToProps)(Recipe);
