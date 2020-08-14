@@ -2,13 +2,13 @@ import { actions } from '../actions/index.actions';
 
 const { ADD_RECIPES } = actions;
 
-const recipe = (state = [], actions) => {
+const recipes = (state = [], actions) => {
   switch (actions.type) {
     case ADD_RECIPES:
-      return [...state, actions.recipe];
+      return [...state, actions.recipes];
     default:
       return state;
   }
 };
 
-export default recipe;
+export default recipes;
