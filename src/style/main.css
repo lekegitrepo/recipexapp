@@ -39,6 +39,20 @@ header {
   text-align: center;
 }
 
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.filter select {
+  width: 20rem;
+}
+
+.filter select:focus, .filter select:active {
+  outline: none;
+}
+
 .recipe {
   margin-bottom: 2rem;
 }
