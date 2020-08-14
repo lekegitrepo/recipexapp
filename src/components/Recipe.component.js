@@ -19,7 +19,7 @@ class Recipe extends Component {
     try {
       const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${location.state.id}`);
       const { meals } = await res.json();
-      addRecipe(meals[0])
+      addRecipe(meals[0]);
       return meals;
     } catch (error) {
       throw new Error(error.message);
@@ -28,10 +28,10 @@ class Recipe extends Component {
 
   render() {
     const { recipe } = this.props;
-    let recipeDetail = recipe[recipe.length - 1]
+    let recipeDetail = recipe[recipe.length - 1];
     if (recipe.length) {
-      recipeDetail = recipe[recipe.length - 1]
-      if(recipe.length > 1) recipe.shift()
+      recipeDetail = recipe[recipe.length - 1];
+      if (recipe.length > 1) recipe.shift();
     }
     const displayRecipe = recipeDetail ? (
       <section className="single-recipe">
@@ -45,10 +45,21 @@ class Recipe extends Component {
             <img className="recipe__image" src={recipeDetail.strMealThumb} alt={recipeDetail.strMeal} />
             <h3 className="recipe__title">{recipe[0].strMeal}</h3>
             <h5 className="recipe__details">
-              Category: <span> {recipeDetail.strCategory} </span>
+              Category:
+              {' '}
+              <span>
+                {' '}
+                {recipeDetail.strCategory}
+                {' '}
+              </span>
             </h5>
             <h5>
-              Country: <span> {recipeDetail.strArea}</span>
+              Country:
+              {' '}
+              <span>
+                {' '}
+                {recipeDetail.strArea}
+              </span>
             </h5>
             <div>
               <h5>Instructions</h5>
@@ -62,9 +73,14 @@ class Recipe extends Component {
                   href={recipeDetail.strYoutube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View Instructions Video</a>
+                >
+                  View Instructions Video
+                </a>
               </h6>
-              <h6>Tag(s): <span>{recipeDetail.strTags}</span></h6>
+              <h6>
+                Tag(s):
+                <span>{recipeDetail.strTags}</span>
+              </h6>
             </div>
             <button className="btn btn-back" type="button">
               <Link to="/">Back to Home</Link>
@@ -87,6 +103,8 @@ const mapDispatchToProps = dispatch => ({
 
 Recipe.propTypes = {
   recipe: PropTypes.instanceOf(Object).isRequired,
+  location: PropTypes.instanceOf(Object).isRequired,
+  addRecipe: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipe);

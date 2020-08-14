@@ -6,13 +6,13 @@ const CATEGORIES = [
   'Goat',
   'Lamb',
   'Miscellaneous',
-  "Pasta",
-  "Pork",
-  "Seafood",
-  "Side",
-  "Starter",
-  "Vegan",
-  "Vegetarian",
+  'Pasta',
+  'Pork',
+  'Seafood',
+  'Side',
+  'Starter',
+  'Vegan',
+  'Vegetarian',
 ];
 
 export default CATEGORIES;

@@ -15,6 +15,8 @@ const recipe = [{
 const setup = (props = {}) => {
   const component = shallow(<Recipe.WrappedComponent
     recipe={props.recipe}
+    location={props.location}
+    addRecipe={props.addRecipe}
   />);
   return component;
 };
@@ -25,6 +27,8 @@ describe('Recipe Component', () => {
   beforeEach(() => {
     const props = {
       recipe,
+      location: {},
+      addRecipe: () => {}
     };
     component = setup(props);
   });

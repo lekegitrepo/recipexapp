@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { v4 } from 'uuid';
-import CategoryFilter from '../components/CategoryFilter.component';
+import CategoryFilter from './CategoryFilter.component';
 import { addCategories, addRecipes, changeFilter } from '../actions/index.actions';
-import CATEGORIES from '../store/categories.store'
+import CATEGORIES from '../store/categories.store';
 
 class Recipes extends Component {
   constructor(props) {
@@ -17,10 +17,10 @@ class Recipes extends Component {
     this.getRecipes();
   }
 
-  componentDidUpdate(prevProps, prevState){
+  componentDidUpdate(prevProps) {
     if (prevProps.filter !== this.props.filter) {
       const { filter } = this.props;
-      this.getRecipesByCategory(filter)
+      this.getRecipesByCategory(filter);
       return true;
     }
     return false;
@@ -31,8 +31,8 @@ class Recipes extends Component {
     try {
       const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${location.state.name}`);
       const { meals } = await res.json();
-      changeFilter(location.state.name)
-      addRecipes(meals)
+      changeFilter(location.state.name);
+      addRecipes(meals);
       return meals;
     } catch (error) {
       throw new Error(error.message);
@@ -44,7 +44,7 @@ class Recipes extends Component {
     try {
       const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${prop}`);
       const { meals } = await res.json();
-      addRecipes(meals)
+      addRecipes(meals);
       return meals;
     } catch (error) {
       throw new Error(error.message);
@@ -52,11 +52,11 @@ class Recipes extends Component {
   }
 
   render() {
-    let filterCategory = []
+    let filterCategory = [];
     const { filter, changeFilter, recipes } = this.props;
     if (recipes.length) {
-      filterCategory = recipes[recipes.length - 1]
-      if(recipes.length > 1) recipes.shift()
+      filterCategory = recipes[recipes.length - 1];
+      if (recipes.length > 1) recipes.shift();
     }
     const category = filter;
     return (
@@ -69,9 +69,9 @@ class Recipes extends Component {
           </h3>
         </header>
         <div className="filter-container">
-          <CategoryFilter 
-            changeFilter={changeFilter} 
-            filter={filter} 
+          <CategoryFilter
+            changeFilter={changeFilter}
+            filter={filter}
             categories={CATEGORIES}
           />
         </div>
@@ -94,7 +94,7 @@ class Recipes extends Component {
                     <Link to={{
                       pathname: `/recipe/${res.idMeal}`,
                       state: {
-                        recipe: res.strMeal, id: res.idMeal
+                        recipe: res.strMeal, id: res.idMeal,
                       },
                     }}
                     >
@@ -122,11 +122,11 @@ const mapDispatchToProps = dispatch => ({
 });
 
 Recipes.propTypes = {
-  categories: PropTypes.instanceOf(Array).isRequired,
   location: PropTypes.instanceOf(Object).isRequired,
-  addCategories: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
   changeFilter: PropTypes.func.isRequired,
+  addRecipes: PropTypes.func.isRequired,
+  recipes: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipes);
