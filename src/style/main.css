@@ -28,7 +28,7 @@ a:hover {
 
 a.btn-back {
   font-size: 22px;
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 button:focus {
@@ -54,7 +54,8 @@ header {
   width: 20rem;
 }
 
-.filter select:focus, .filter select:active {
+.filter select:focus,
+.filter select:active {
   outline: none;
 }
 
@@ -99,4 +100,3 @@ header {
   letter-spacing: 1px;
   text-transform: none;
 }
-
