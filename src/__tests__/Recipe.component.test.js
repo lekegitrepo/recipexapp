@@ -7,14 +7,14 @@ const componentTest = (component, attribute) => {
   return wrapper;
 };
 
-const recipes = [{
+const recipe = [{
   strMeal: 'Pizza',
   strMealThumb: 'https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg',
 }];
 
 const setup = (props = {}) => {
   const component = shallow(<Recipe.WrappedComponent
-    location={props.location}
+    recipe={props.recipe}
   />);
   return component;
 };
@@ -24,12 +24,7 @@ describe('Recipe Component', () => {
 
   beforeEach(() => {
     const props = {
-      location: {
-        state: {
-          recipe: 'Pizza',
-        },
-      },
-      recipes,
+      recipe,
     };
     component = setup(props);
   });
