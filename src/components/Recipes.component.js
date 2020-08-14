@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -18,7 +19,8 @@ class Recipes extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.filter !== this.props.filter) {
+    const { filter } = prevProps;
+    if (filter !== this.props.filter) {
       const { filter } = this.props;
       this.getRecipesByCategory(filter);
       return true;

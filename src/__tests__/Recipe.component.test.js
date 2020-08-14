@@ -28,7 +28,7 @@ describe('Recipe Component', () => {
     const props = {
       recipe,
       location: {},
-      addRecipe: () => {}
+      addRecipe: () => {},
     };
     component = setup(props);
   });
