@@ -40,8 +40,6 @@ class Recipe extends Component {
         <header>
           <h3>
             {recipeDetail.strMeal}
-            {' '}
-            Recipe
           </h3>
         </header>
         <div className="container">
@@ -68,7 +66,7 @@ class Recipe extends Component {
                   rel="noopener noreferrer"
                   >View Instructions Video</a>
               </h6>
-              <h6>Tags: <span>{recipeDetail.strTags}</span></h6>
+              <h6>Tag(s): <span>{recipeDetail.strTags}</span></h6>
             </div>
             <button className="btn btn-back" type="button">
               <Link to="/">Back to Home</Link>
@@ -90,7 +88,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 Recipe.propTypes = {
-  location: PropTypes.instanceOf(Object).isRequired,
+  recipe: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipe);
