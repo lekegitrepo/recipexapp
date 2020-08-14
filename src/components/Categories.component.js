@@ -47,7 +47,7 @@ class Categories extends Component {
                   </p>
                 </div>
                 <button className="btn" type="button">
-                  <Link to={{ pathname: `/category/${item.idCategory}`, state: { name: item.strCategory, linkPath: `/category/${item.idCategory}` } }}>
+                  <Link to={{ pathname: `/category/${item.idCategory}`, state: { name: item.strCategory } }}>
                     View
                     {item.strCategory}
                     {' '}
