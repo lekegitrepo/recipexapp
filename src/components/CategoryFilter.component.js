@@ -1,5 +1,6 @@
 import React from 'react';
 import Proptypes from 'prop-types';
+import { v4 } from 'uuid';
 
 const CategoryFilter = ({ categories, changeFilter, filter }) => {
   const handleChange = e => {
@@ -9,9 +10,8 @@ const CategoryFilter = ({ categories, changeFilter, filter }) => {
   return (
     <div className="filter">
       <select onChange={handleChange} value={filter}>
-        <option value="All Categories">All Categories</option>
-        {categories.map(({ category }) => (
-          <option key={`${category}-key`} value={category}>
+        {categories.map( category => (
+          <option key={v4()} value={category}>
             {category}
           </option>
         ))}
