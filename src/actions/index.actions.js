@@ -1,13 +1,21 @@
 const actions = {
   ADD_RECIPES: 'ADD_RECIPES',
+  ADD_RECIPE: 'ADD_RECIPE',
   ADD_CATEGORY: 'ADD_CATEGORY',
   CHANGE_FILTER: 'CHANGE_FILTER',
   ADD_CATEGORIES: 'ADD_CATEGORIES',
 };
 
-const addRecipes = recipe => (
+const addRecipes = recipes => (
   {
     type: actions.ADD_RECIPES,
+    recipes,
+  }
+);
+
+const addRecipe = recipe => (
+  {
+    type: actions.ADD_RECIPE,
     recipe,
   }
 );
@@ -28,5 +36,5 @@ const addCategories = categories => ({
 });
 
 export {
-  actions, addCategory, changeFilter, addRecipes, addCategories,
+  actions, addCategory, changeFilter, addRecipes, addCategories, addRecipe,
 };
