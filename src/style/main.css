@@ -26,6 +26,11 @@ a:hover {
   text-decoration: none;
 }
 
+a.btn-back {
+  font-size: 22px;
+  padding-left: 0px;
+}
+
 button:focus {
   outline: none;
 }
@@ -59,7 +64,7 @@ header {
 
 .single-recipe .recipe {
   margin: 1rem auto;
-  width: 55%;
+  width: 45%;
 }
 
 .recipes__card {
@@ -94,3 +99,4 @@ header {
   letter-spacing: 1px;
   text-transform: none;
 }
+

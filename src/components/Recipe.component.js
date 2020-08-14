@@ -82,9 +82,7 @@ class Recipe extends Component {
                 <span>{recipeDetail.strTags}</span>
               </h6>
             </div>
-            <button className="btn btn-back" type="button">
-              <Link to="/">Back to Home</Link>
-            </button>
+            <Link className="btn btn-back" to="/">&#8592;Back to Home</Link>
           </div>
         </div>
       </section>
