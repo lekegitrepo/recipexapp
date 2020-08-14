@@ -27,7 +27,7 @@ class Recipes extends Component {
   }
 
   async getRecipes() {
-    const { addCategories, location, filter, addRecipes, changeFilter } = this.props;
+    const { location, addRecipes, changeFilter } = this.props;
     try {
       const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${location.state.name}`);
       const { meals } = await res.json();
@@ -40,7 +40,7 @@ class Recipes extends Component {
   }
 
   async getRecipesByCategory(prop) {
-    const { addCategories, location, filter, addRecipes } = this.props;
+    const { addRecipes } = this.props;
     try {
       const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${prop}`);
       const { meals } = await res.json();
@@ -53,7 +53,7 @@ class Recipes extends Component {
 
   render() {
     let filterCategory = []
-    const { categories, filter, changeFilter, recipes } = this.props;
+    const { filter, changeFilter, recipes } = this.props;
     if (recipes.length) {
       filterCategory = recipes[recipes.length - 1]
       if(recipes.length > 1) recipes.shift()

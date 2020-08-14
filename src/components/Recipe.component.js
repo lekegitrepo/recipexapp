@@ -19,7 +19,6 @@ class Recipe extends Component {
     try {
       const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${location.state.id}`);
       const { meals } = await res.json();
-      console.log(meals)
       addRecipe(meals[0])
       return meals;
     } catch (error) {
@@ -30,7 +29,6 @@ class Recipe extends Component {
   render() {
     const { recipe } = this.props;
     let recipeDetail = recipe[recipe.length - 1]
-    console.log('render: ', recipe)
     if (recipe.length) {
       recipeDetail = recipe[recipe.length - 1]
       if(recipe.length > 1) recipe.shift()

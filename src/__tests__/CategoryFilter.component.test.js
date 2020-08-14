@@ -7,7 +7,7 @@ const componentTest = (component, attribute) => {
   return wrapper;
 };
 
-const categories = ['Vegetable', 'Fruit', 'Grain', 'Meat'];
+const categories = ['Vegetable', 'Fruit', 'Grain', 'Meat', 'Breakfast'];
 
 const setup = (props = {}) => {
   const component = shallow(

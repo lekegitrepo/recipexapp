@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../components/App';
+import App from '../containers/App.container';
 
 const testAttribute = (component, attribute) => {
   const wrapper = component.find(attribute);
