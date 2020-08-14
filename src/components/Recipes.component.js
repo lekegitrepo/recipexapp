@@ -58,7 +58,7 @@ class Recipes extends Component {
       filterCategory = recipes[recipes.length - 1]
       if(recipes.length > 1) recipes.shift()
     }
-    const category = (filter === 'All Categories') ? location.state.name : filter;
+    const category = filter;
     const path = location.state.linkPath;
     return (
       <section className="recipes">
@@ -95,7 +95,7 @@ class Recipes extends Component {
                     <Link to={{
                       pathname: `/recipe/${res.idMeal}`,
                       state: {
-                        recipe: res.strMeal, recipes: categories, category, path,
+                        recipe: res.strMeal, recipes: categories, id: res.idMeal
                       },
                     }}
                     >
