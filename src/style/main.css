@@ -18,12 +18,14 @@ a {
   padding: 8px;
 }
 
-a:hover {
-  background-color: #e74c3c;
-  border-radius: 8px;
-  color: #eae1e1 !important;
+a:hover, a:hover .recipes__title {
+  color: #e74c3cb8 !important;
   cursor: pointer;
   text-decoration: none;
+}
+
+a:hover .recipe__card-image {
+  opacity: .5;
 }
 
 a.btn-back {

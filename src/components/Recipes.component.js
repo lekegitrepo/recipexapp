@@ -81,29 +81,26 @@ class Recipes extends Component {
           <div className="row">
             {filterCategory.map(res => (
               <div key={v4()} className="col-md-4 recipe">
-                <div className="recipe__card">
-                  <img className="recipe__card-image" src={res.strMealThumb} alt={res.strMeal} />
-                  <div className="recipe__text">
-                    <h5 className="recipes__title">
-                      {res.strMeal}
-                    </h5>
-                    <p className="recipes__subtitle">
-                      Content:
-                      <span>{res.strMeal}</span>
-                    </p>
+                <Link to={{
+                  pathname: `/recipe/${res.idMeal}`,
+                  state: {
+                    recipe: res.strMeal, id: res.idMeal,
+                  },
+                }}
+                >
+                  <div className="recipe__card">
+                    <img className="recipe__card-image" src={res.strMealThumb} alt={res.strMeal} />
+                    <div className="recipe__text">
+                      <h5 className="recipes__title">
+                        {res.strMeal}
+                      </h5>
+                      <p className="recipes__subtitle">
+                        Content:
+                        <span>{res.strMeal}</span>
+                      </p>
+                    </div>
                   </div>
-                  <button className="btn btn-view" type="button">
-                    <Link to={{
-                      pathname: `/recipe/${res.idMeal}`,
-                      state: {
-                        recipe: res.strMeal, id: res.idMeal,
-                      },
-                    }}
-                    >
-                      View Details
-                    </Link>
-                  </button>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
