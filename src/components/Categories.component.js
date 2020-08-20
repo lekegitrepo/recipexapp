@@ -35,26 +35,20 @@ class Categories extends Component {
         <div className="row">
           {categories.map(item => (
             <div key={v4()} className="col-md-4 recipe">
-              <div className="recipes__card">
-                <img className="recipe__card-image" src={item.strCategoryThumb} alt={item.strCategory} />
-                <div className="recipe__text">
-                  <h5 className="recipes__title">
-                    {item.strCategory}
-                  </h5>
-                  <p className="recipes__subtitle">
-                    Description:
-                    <span>{item.strCategoryDescription}</span>
-                  </p>
+              <Link to={{ pathname: `/category/${item.idCategory}`, state: { name: item.strCategory } }}>
+                <div className="recipes__card">
+                  <img className="recipe__card-image" src={item.strCategoryThumb} alt={item.strCategory} />
+                  <div className="recipe__text">
+                    <h5 className="recipes__title">
+                      {item.strCategory}
+                    </h5>
+                    <p className="recipes__subtitle">
+                      Description:
+                      <span>{item.strCategoryDescription}</span>
+                    </p>
+                  </div>
                 </div>
-                <button className="btn" type="button">
-                  <Link to={{ pathname: `/category/${item.idCategory}`, state: { name: item.strCategory } }}>
-                    View
-                    {item.strCategory}
-                    {' '}
-                    Category
-                  </Link>
-                </button>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
