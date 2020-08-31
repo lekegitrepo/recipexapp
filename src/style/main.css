@@ -12,19 +12,19 @@ img {
 }
 
 a {
-  color: #e74c3c !important;
+  color: #a52626 !important;
   font-family: 'Odibee Sans', cursive;
   font-size: 24px;
   padding: 8px;
 }
 
 a:hover, a:hover .recipes__title {
-  color: #e74c3cb8 !important;
+  color: #a52626b8 !important;
   cursor: pointer;
   text-decoration: none;
 }
 
-a:hover .recipe__card-image {
+a:hover .recipe__card-image, a:hover .recipes__subtitle {
   opacity: .5;
 }
 
@@ -38,7 +38,7 @@ button:focus {
 }
 
 header {
-  background-color: #f54242;
+  background-color: #a52626;
   color: white;
   height: 90px;
   padding: 30px;
@@ -83,13 +83,14 @@ header {
 }
 
 .recipes__title {
-  color: #e74c3c;
+  color: #a52626;
   font-size: 1.1rem;
   padding: 1.8rem 0 0.2rem 0;
   text-transform: uppercase;
 }
 
 .recipes__subtitle {
+  color: #000;
   font-weight: 600;
   font-size: 0.8rem;
   letter-spacing: 2px;
@@ -102,3 +103,5 @@ header {
   letter-spacing: 1px;
   text-transform: none;
 }
+
+

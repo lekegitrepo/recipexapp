@@ -31,7 +31,7 @@ class Categories extends Component {
   render() {
     const { categories } = this.props;
     return (
-      <div className="Categories container">
+      <div className="categories container">
         <div className="row">
           {categories.map(item => (
             <div key={v4()} className="col-md-4 recipe">
